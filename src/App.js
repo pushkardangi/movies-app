@@ -1,23 +1,67 @@
-import React, {useEffect} from "react";
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import SearchIcon from "./search.svg";
 
-const API_URL = "http://www.omdbapi.com?apikey=3f5f7a15";
+import MovieCard from "./components/MovieCard";
+
+// This app uses omdbapi to show the data
+// paste your api key in place of "PUSHKAR" to see results
+// get your api key from -> https://omdbapi.com/apikey.aspx
+const API_URL = "http://www.omdbapi.com?apikey=PUSHKAR";
 
 const App = () => {
 
-    const searchMovies =  async (title) =>{
-        const response = await fetch (`${API_URL}&s=${title}`);
-        const data = await response.json();
+  const [movies, setMovies] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
-        console.log(data.Search);
-    }
+  const searchMovies = async (title) => {
 
-    useEffect(()=>{
-        // searchMovies("thor");
-    }, [])
+    const response = await fetch(`${API_URL}&s=${title}`);
+    const data = await response.json();
 
+    setMovies(data.Search);
+    // console.log(data);
+  };
+
+  useEffect(() => {
+    searchMovies("thor");
+  }, []);
 
   return (
-    <h1> Movies App using react- App.js</h1>
+    <div className="app">
+
+      <h1>Movies App</h1>
+
+      <div className="search">
+        <input
+          type="text"
+          placeholder="Search for movies"
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+        />
+
+        <img src={SearchIcon}
+          alt="search"
+          onClick={() => searchMovies(searchTerm)}
+        />
+      </div>
+
+      {movies?.length > 0
+        ? (
+            <div className="container">
+               {
+                movies.map((movie)=>(
+                    <MovieCard movie={movie} key={movie.imdbID} />
+                ))
+               }
+            </div>
+        ) : (
+            <div className="empty">
+                <h2>No Movies found</h2>
+            </div>
+        )}
+
+    </div>
   );
 };
 
