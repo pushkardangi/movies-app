@@ -30,7 +30,7 @@ const App = () => {
   return (
     <div className="app">
 
-      <h1>Movies App</h1>
+<h1 className="anurati">Movies And Series</h1>
 
       <div className="search">
         <input

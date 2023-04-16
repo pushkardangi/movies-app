@@ -1,6 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Roboto:wght@500&display=swap');
 
+@font-face {
+  font-family: 'anurati';
+  src: url('fonts/anurati/anurati.otf');
+}
+
+@font-face {
+  font-family: 'viola';
+  src: url('fonts/viola/viola.otf');
+}
+
+.anurati{
+  font-family: 'anurati', Helvetica, sans-serif;
+}
+
+.viola{
+  font-family: 'viola', Courier, monospace;
+}
+
 * {
   margin: 0;
   border: 0;
@@ -27,11 +45,10 @@ body {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 5rem;
   letter-spacing: 0.9px;
   background: linear-gradient(
-    90deg,
-    rgba(249, 211, 180, 1) 0%,
+    rgba(249, 211, 180, 1) 40%,
     rgba(249, 211, 180, 0) 100%
   );
   background-clip: text;
