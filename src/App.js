@@ -4,10 +4,8 @@ import SearchIcon from "./search.svg";
 
 import MovieCard from "./components/MovieCard";
 
-// This app uses omdbapi to show the data
-// paste your api key in place of "PUSHKAR" to see results
 // get your api key from -> https://omdbapi.com/apikey.aspx
-const API_URL = "http://www.omdbapi.com?apikey=PUSHKAR";
+const API_URL = `http://www.omdbapi.com?apikey=${process.env.REACT_APP_API_KEY}`;
 
 const App = () => {
 
