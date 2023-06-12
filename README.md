@@ -1,4 +1,4 @@
-# Movies and Series <a href="https://pd-movies-series.netlify.app/"> ![Live Link](https://img.shields.io/badge/live_link-1e394e?style=for-the-badge&logo=&logoColor=white) </a>
+# Movies and Series [![Live Link](https://img.shields.io/badge/live_link-1e394e?style=for-the-badge&logo=&logoColor=white)](https://pd-movies-series.netlify.app/)
 
 Movies and Series is a comprehensive online database that provides information about your movies and series.
 
