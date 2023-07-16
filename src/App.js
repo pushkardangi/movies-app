@@ -34,7 +34,7 @@ const App = () => {
           placeholder="Search for movies"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          onKeyUp={(e) => {if (e.key === "Enter"){searchMovies(searchTerm)}}}
+          onKeyDown={(e) => {if (e.key === "Enter"){searchMovies(searchTerm)}}}
         />
 
         <img src={SearchIcon}
